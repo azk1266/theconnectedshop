@@ -16,10 +16,16 @@ describe("Small menu check", () => {
         expect(links[2]).to.contain.text("Cart");
       });
     //check account link
-    // cy.get('li.HorizontalList__Item').should('have.attr', 'href', '/account');
+    cy.get('[href="/account"].Heading.Link--primary.Text--subdued.u-h8')
+      .should('have.attr', 'href', '/account')
+      .and('be.visible');
     //check search link
-    cy.get("li.HorizontalList__Item").should("have.attr", "href", "/search");
+    cy.get('[href="/search"].Heading.Link--primary.Text--subdued.u-h8')
+      .should("have.attr", "href", "/search")
+      .and('be.visible');
     //check cart link
-    cy.get("li.HorizontalList__Item").should("have.attr", "href", "/cart");
+    cy.get('[href="/cart"].Heading.u-h6')
+      .should("have.attr", "href", "/cart")
+      .and('be.visible');
   });
 });
